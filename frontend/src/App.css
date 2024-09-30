@@ -1,0 +1,49 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap");
+
+
+body {
+  margin: 0; /* Remove default body margin */
+  overflow: hidden; /* Prevent scrolling */
+}
+
+
+.App{
+    /* min-height: 100vh; */
+    /* display: flex; */
+    /* background-image: url("./picture.jpg"); */
+    /* background-size: cover;
+    background-position: center; */
+    color: black;
+    position: relative; /* Ensure positioning */
+    min-height: 100vh;
+    display: flex;
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+    /* color: white; Change text color as needed */
+}
+
+
+.background-video {
+  position: absolute; /* Position the video absolutely */
+  top: 50%;
+  left: 50%;
+  width: 100vw; /* Ensure video covers full width */
+  height: 100vh; /* Ensure video covers full height */
+  object-fit: cover; /* Cover the entire container without stretching */
+  z-index: -1; /* Place video behind other content */
+  transform: translate(-50%, -50%); /* Center the video */
+}
+
+
+::-webkit-scrollbar {
+    width: 0px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: rgba(136, 136, 136, 0.281);
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
