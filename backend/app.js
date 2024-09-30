@@ -47,13 +47,9 @@ const server = app.listen(
 );
 
 const io = require("socket.io")(server, {
-  pingTimeout: 100000,
-  pingInterval: 25000,
-  reconnectionAttempts: 10,
-  reconnectionDelay: 1000,
+  pingTimeout: 60000,
   cors: {
-    origin: process.env.CORS_ORIGIN || "http://localhost:3000",
-    credentials: true,
+    origin: "http://localhost:3000",
   },
 });
 
