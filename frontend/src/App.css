@@ -3,7 +3,7 @@
 
 body {
   margin: 0; /* Remove default body margin */
-  overflow: hidden; /* Prevent scrolling */
+  /* overflow: hidden; Prevent scrolling */
 }
 
 
@@ -14,9 +14,11 @@ body {
     /* background-size: cover;
     background-position: center; */
     color: black;
+    flex-direction: column;
     position: relative; /* Ensure positioning */
     min-height: 100vh;
     display: flex;
+    overflow: auto; 
     align-items: center; /* Center content vertically */
     justify-content: center; /* Center content horizontally */
     /* color: white; Change text color as needed */
@@ -27,8 +29,8 @@ body {
   position: absolute; /* Position the video absolutely */
   top: 50%;
   left: 50%;
-  width: 100vw; /* Ensure video covers full width */
-  height: 100vh; /* Ensure video covers full height */
+  width: 100%; /* Ensure video covers full width */
+  height: 100%; /* Ensure video covers full height */
   object-fit: cover; /* Cover the entire container without stretching */
   z-index: -1; /* Place video behind other content */
   transform: translate(-50%, -50%); /* Center the video */

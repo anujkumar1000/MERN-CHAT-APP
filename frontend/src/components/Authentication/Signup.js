@@ -198,6 +198,7 @@ const Signup = () => {
         Sign Up
       </Button>
     </VStack>
+   
   );
 };
 
