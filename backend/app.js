@@ -50,6 +50,8 @@ const io = require("socket.io")(server, {
   // pingTimeout: 60000,
   cors: {
     origin: "*",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS"
     // credentials:true
   },
 });
