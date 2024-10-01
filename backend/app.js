@@ -45,14 +45,17 @@ const server = app.listen(
   5000,
   console.log(`Server Started on PORT ${PORT}`.yellow.bold)
 );
+const allowedOrigins = [
+  "http://localhost:3000", // Local development
+  "https://mern-chat-app-b630.onrender.com", // Production
+];
 
 const io = require("socket.io")(server, {
   // pingTimeout: 60000,
   cors: {
-    origin: "*",
-    "Access-Control-Allow-Origin": "*",
-    "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS"
-    // credentials:true
+    origin:allowedOrigins,
+    methods: ["GET", "POST"],
+    credentials: true,
   },
 });
 
