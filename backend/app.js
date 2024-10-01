@@ -46,20 +46,13 @@ const server = app.listen(
   console.log(`Server Started on PORT ${PORT}`.yellow.bold)
 );
 
-const allowedOrigins = [
-  "http://localhost:3000", // Local development
-  "https://mern-chat-app-b630.onrender.com", // Production
-];
-
 const io = require("socket.io")(server, {
-  // pingTimeout: 60000,
+  pingTimeout: 60000,
   cors: {
-    origin: allowedOrigins,
-    methods: ["GET", "POST"],
-    credentials: true,
+    origin: "*",
+    credentials:true
   },
 });
-
 
 io.on("connection", (socket) => {
   console.log("connected to socket.io");
@@ -92,8 +85,5 @@ io.on("connection", (socket) => {
   socket.off("setup", () => {
     console.log("USER DISCONNECTED");
     socket.leave(userData._id);
-  });
-  socket.on("connect_error", (err) => {
-    console.error("Connection Error:", err);
   });
 });
